@@ -92,9 +92,9 @@ public class EmployeeServiceImpl implements EmployeeService {
     }
 
     /*
-    * 员工列表
-    * */
-    public PageResult  pageQuery(EmployeePageQueryDTO employeePageQueryDTO) {
+     * 员工列表
+     * */
+    public PageResult pageQuery(EmployeePageQueryDTO employeePageQueryDTO) {
         //分页查询
         PageHelper.startPage(employeePageQueryDTO.getPage(), employeePageQueryDTO.getPageSize());
         Page<Employee> employee = employeeMapper.pageQuery(employeePageQueryDTO);

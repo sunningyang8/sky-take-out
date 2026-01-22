@@ -10,18 +10,21 @@ public interface EmployeeService {
 
     /**
      * 员工登录
+     *
      * @param employeeLoginDTO
      * @return
      */
     Employee login(EmployeeLoginDTO employeeLoginDTO);
+
     /**
      * 新增员工
+     *
      * @param employeeDTO
      */
     void save(EmployeeDTO employeeDTO);
 
     /*
-    * 查询列表
-    * */
+     * 查询列表
+     * */
     PageResult pageQuery(EmployeePageQueryDTO employeePageQueryDTO);
 }

@@ -86,13 +86,14 @@ public class EmployeeController {
         employeeService.save(employeeDTO);
         return Result.success();
     }
+
     /*
      * 查询员工列表
      * */
     @GetMapping("/page")
     @ApiOperation("员工列表")
-    public Result<PageResult> page(EmployeePageQueryDTO  employeePageQueryDTO) {
-        PageResult pageResult =  employeeService.pageQuery(employeePageQueryDTO);
+    public Result<PageResult> page(EmployeePageQueryDTO employeePageQueryDTO) {
+        PageResult pageResult = employeeService.pageQuery(employeePageQueryDTO);
         return Result.success(pageResult);
     }
 }

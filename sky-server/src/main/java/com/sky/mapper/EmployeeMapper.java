@@ -12,24 +12,24 @@ public interface EmployeeMapper {
 
     /**
      * 根据用户名查询员工
+     *
      * @param username
      * @return
      */
     @Select("select * from employee where username = #{username}")
     Employee getByUsername(String username);
 
-     /**
-      * 新增员工
-      * @param employee
-      */
-     @Insert("insert into employee(username, name, phone, sex, id_number, password, create_time, update_time, create_user, update_user, status) " +
-             "values(#{username}, #{name}, #{phone}, #{sex}, #{idNumber}, #{password}, #{createTime}, #{updateTime}, #{createUser}, #{updateUser}, #{status})")
-     void insert(Employee employee);
-
-    Page<Employee> pageQuery(EmployeePageQueryDTO employeePageQueryDTO);
+    /**
+     * 新增员工
+     *
+     * @param employee
+     */
+    @Insert("insert into employee(username, name, phone, sex, id_number, password, create_time, update_time, create_user, update_user, status) " +
+            "values(#{username}, #{name}, #{phone}, #{sex}, #{idNumber}, #{password}, #{createTime}, #{updateTime}, #{createUser}, #{updateUser}, #{status})")
+    void insert(Employee employee);
 
     /*
      * 员工列表分页
      * */
-    
+    Page<Employee> pageQuery(EmployeePageQueryDTO employeePageQueryDTO);
 }
