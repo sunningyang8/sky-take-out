@@ -29,4 +29,13 @@ public interface EmployeeService {
     PageResult pageQuery(EmployeePageQueryDTO employeePageQueryDTO);
 
     void status(Integer status, long id);
+/*
+* 修改时获取数据
+* */
+    Employee getIdrow(long id);
+
+    /*
+    * 修改操作
+    * */
+    void editRow(EmployeeDTO employeeDTO);
 }

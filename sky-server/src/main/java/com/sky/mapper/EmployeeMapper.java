@@ -33,7 +33,12 @@ public interface EmployeeMapper {
      * */
     Page<Employee> pageQuery(EmployeePageQueryDTO employeePageQueryDTO);
 
-
+/*
+* 修改状态
+* */
     void setStatus(Employee employee);
-
+/*
+* 修改操作时 获取整条数据
+* */
+    Employee getIdrow(long id);
 }

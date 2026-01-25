@@ -18,6 +18,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -101,6 +102,18 @@ public class EmployeeController {
     @ApiOperation("禁用状态")
     public Result status (@PathVariable Integer status,long id){
         employeeService.status(status,id);
+        return Result.success();
+    }
+    @GetMapping("/{id}")
+    @ApiOperation("根据Id获取数据")
+    public Result<Employee> getById(@PathVariable long id){
+        Employee list = employeeService.getIdrow(id);
+        return Result.success(list);
+    }
+    @PutMapping
+    @ApiOperation("修改操作")
+    public Result editRow(@RequestBody EmployeeDTO employeeDTO){
+        employeeService.editRow(employeeDTO);
         return Result.success();
     }
 }
