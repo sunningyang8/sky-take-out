@@ -32,4 +32,8 @@ public interface EmployeeMapper {
      * 员工列表分页
      * */
     Page<Employee> pageQuery(EmployeePageQueryDTO employeePageQueryDTO);
+
+
+    void setStatus(Employee employee);
+
 }
